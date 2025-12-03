@@ -2,11 +2,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            // 탭 1: 기록
+            HomeView()
+                .tabItem { Label("Home", systemImage: "drop") }
+                
+            // 탭 2: 보고서
+            Color.clear
+                .tabItem { Label("Insights", systemImage: "chart.bar") }
+
+            // 탭 3: 내보내기
+            Color.clear
+                .tabItem { Label("Export", systemImage: "square.and.arrow.up") }
+            
+            // 탭 4: 설정
+            Color.clear
+                .tabItem { Label("Setting", systemImage: "gearshape") }
         }
     }
 }
