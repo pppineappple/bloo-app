@@ -1,19 +1,24 @@
-# Xcode / Swift
+# Build artifacts
+.build/
 DerivedData/
+
+# Xcode user data
 xcuserdata/
 *.xcuserstate
 *.xccheckout
 *.moved-aside
 *.xcscmblueprint
-.build/
+
+# Playgrounds timeline/workspace (있으면)
 timeline.xctimeline
 playground.xcworkspace
 
-# CocoaPods/Carthage (쓰면)
-Pods/
+# Package manager outputs (옵션)
+Packages/
 Carthage/Build/
+Pods/
 
-# Fastlane (쓰면)
+# Fastlane (옵션)
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
