@@ -1,0 +1,20 @@
+# Xcode / Swift
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+.build/
+timeline.xctimeline
+playground.xcworkspace
+
+# CocoaPods/Carthage (쓰면)
+Pods/
+Carthage/Build/
+
+# Fastlane (쓰면)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
