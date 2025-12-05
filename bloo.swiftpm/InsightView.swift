@@ -158,11 +158,23 @@ struct TimelineRow: View {
 
             // Icon
             ZStack {
-                Circle().fill(Color.teal.opacity(0.15))
+                // Background circle color: yellow for urination, teal for water intake
+                Circle()
+                    .fill(
+                        event.kind == .urination
+                        ? Color.yellow.opacity(0.25)
+                        : Color.teal.opacity(0.15)
+                    )
                     .frame(width: 42, height: 42)
+
+                // Icon color: yellow for urination, teal for water intake
                 Image(systemName: event.kind.iconName)
                     .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(Color.teal)
+                    .foregroundStyle(
+                        event.kind == .urination
+                        ? Color.yellow
+                        : Color.teal
+                    )
             }
             
             // Titles
