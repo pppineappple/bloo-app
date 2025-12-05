@@ -2,9 +2,10 @@ import SwiftUI
 
 @main
 struct MyApp: App {
+    @StateObject var store = DiaryStore()
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+    WindowGroup {
+        ContentView().environmentObject(store) }
+  }
 }
