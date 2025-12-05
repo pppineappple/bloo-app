@@ -64,16 +64,7 @@ struct InsightView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Header
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Trends")
-                        .font(.largeTitle).bold()
-                    Text("Track your patterns over time")
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(.top, 8)
-
+                
                 // Segmented control
                 Picker("Range", selection: $range) {
                     ForEach(InsightRange.allCases) { r in
@@ -103,8 +94,8 @@ struct InsightView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
         }
+        .navigationTitle("Insight")
         .background(Color(.systemGroupedBackground))
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -117,19 +108,14 @@ struct MetricCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(.callout)
                 .foregroundStyle(.secondary)
             Text(value)
                 .font(.system(size: 34, weight: .bold))
-            Text(subtitle)
-                .font(.callout)
-                .foregroundStyle(.secondary)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
             .fill(Color(.systemBackground)))
-        .shadow(color: Color.black.opacity(0.06), radius: 12, x: 0, y: 6)
     }
 }
 
@@ -156,7 +142,6 @@ struct TimelineCard: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .strokeBorder(Color(.separator).opacity(0.15))
         )
-        .shadow(color: Color.black.opacity(0.05), radius: 10, x: 0, y: 6)
     }
 }
 
@@ -167,7 +152,7 @@ struct TimelineRow: View {
         HStack(alignment: .center, spacing: 16) {
             // Time
             Text(event.timeText)
-                .font(.title3)
+                .font(.subheadline)
                 .frame(width: 64, alignment: .leading)
                 .foregroundStyle(.secondary)
 
