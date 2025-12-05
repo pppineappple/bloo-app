@@ -16,7 +16,7 @@ struct ContentView: View {
                 .tabItem { Label("Export", systemImage: "square.and.arrow.up") }
             
             // 탭 4: 설정
-            Color.clear
+            SettingsView()
                 .tabItem { Label("Setting", systemImage: "gearshape") }
         }
     }
